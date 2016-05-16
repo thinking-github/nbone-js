@@ -6,7 +6,10 @@
 - https://github.com/jquery/jquery.git
 - https://github.com/douglascrockford/JSON-js.git
 - https://github.com/marioizquierdo/jquery.serializeJSON.git
+- https://github.com/haiercdboy/Validform.git
 
+####项目参考:
+- https://github.com/jzaefferer/jquery-validation.git
 
 ####提供丰富的工具箱:
 	
