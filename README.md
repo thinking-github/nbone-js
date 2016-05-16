@@ -3,9 +3,9 @@
 ##项目构建，此项目提供如下功能:
 
 ####框架集成:
--https://github.com/jquery/jquery.git
--https://github.com/douglascrockford/JSON-js.git
--https://github.com/marioizquierdo/jquery.serializeJSON.git
+- https://github.com/jquery/jquery.git
+- https://github.com/douglascrockford/JSON-js.git
+- https://github.com/marioizquierdo/jquery.serializeJSON.git
 
 
 ####提供丰富的工具箱:
@@ -19,5 +19,5 @@
 - create by 2016-03-24 thinking ChenYiCheng (upload project)
 
 ### git 地址：
--git@github.com:thinking-github/nbone-js.git
+- git@github.com:thinking-github/nbone-js.git
 
