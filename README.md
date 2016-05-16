@@ -10,7 +10,7 @@
 -  弹层组件      	https://github.com/sentsin/layer.git
 -   Z树组件   	 	https://github.com/zTree/zTree_v3.git
 -  日期组件   	 	http://www.my97.net/
--jquery-cookie  https://github.com/carhartl/jquery-cookie.git
+- jquery-cookie  https://github.com/carhartl/jquery-cookie.git
 - js-cookie		https://github.com/js-cookie/js-cookie.git
 
 ####项目参考:
