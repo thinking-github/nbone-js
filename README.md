@@ -6,9 +6,9 @@
 - https://github.com/jquery/jquery.git
 - https://github.com/douglascrockford/JSON-js.git
 - form2Json https://github.com/marioizquierdo/jquery.serializeJSON.git
-- 表单验证  https://github.com/haiercdboy/Validform.git
-- 弹层组件  https://github.com/sentsin/layer.git
-- Z树组件    https://github.com/zTree/zTree_v3.git
+-  表单验证    https://github.com/haiercdboy/Validform.git
+-  弹层组件    https://github.com/sentsin/layer.git
+-   Z树组件    https://github.com/zTree/zTree_v3.git
 
 ####项目参考:
 - https://github.com/jzaefferer/jquery-validation.git
