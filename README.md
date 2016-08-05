@@ -29,3 +29,12 @@
 ### git 地址：
 - git@github.com:thinking-github/nbone-js.git
 
+### 开发js地址：
+- <script type="text/javascript" src="https://rawgit.com/thinking-github/nbone-js/master/plugins/ValidformUtils.js"></script>
+- <script type="text/javascript" src="https://rawgit.com/thinking-github/nbone-js/master/plugins/jquery.utils.js"></script>
+
+### 生产js地址：
+- <script type="text/javascript" src="https://cdn.rawgit.com/thinking-github/nbone-js/master/plugins/ValidformUtils.js"></script>
+- <script type="text/javascript" src="https://cdn.rawgit.com/thinking-github/nbone-js/master/plugins/jquery.utils.js></script>
+
+
