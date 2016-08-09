@@ -1,5 +1,15 @@
 /**
  * ValidformUtils
+ * 用法：
+ * 1. //直接提交
+ * $("#coupon_list_form").Validform(ValidformUtils.settings); <br>
+ * 
+   2.// 异步提交 Validform check 
+  	var bool = ValidformUtils.checkTips(masterform);
+ 	if(!bool){
+		return ;
+	}
+	
  * @author thinking
  * @see  Validform.js
  * @date 2015-12-12
@@ -122,40 +132,6 @@ var ValidformUtilsClass = function(){
 		me.newSettings.tiptype = tiptype;
 		
 		return this;
-	}
-	
-	
-	/**
-	 * jquery 获取容器中的input元素值序列化
-	 * @author thinking
-	 * @param jq jquery对象
-	 */
-	me.parseSerialize = function (jq){
-		if(jq[0].tagName.toUpperCase()=="FORM"){
-			return  jq.serialize();
-			
-		}else{
-			var  form = $('<form id="tempForm" style="display: none;"></form>');
-			form.html(jq.clone());
-			return  form.serialize();
-		}
-		
-	}
-	/**
-	 * jquery 获取容器中的input元素值序列化成数组
-	 * @author thinking
-	 * @param jq jquery对象
-	 */
-	me.parseSerializeArray = function (jq){
-		if(jq[0].tagName.toUpperCase()=="FORM"){
-			return  jq.serializeArray();
-			
-		}else{
-			var  form = $('<form id="tempForm" style="display: none;"></form>');
-			form.html(jq.clone());
-			return  form.serializeArray();
-		}
-		
 	}
 	
 	
