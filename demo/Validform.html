@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<div style="height: 500px;" id="canvas111"/>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://validform.rjboy.cn/Validform/v5.3.2/Validform_v5.3.2.js"></script>
+<!-- <script type="text/javascript" src="http://res.layui.com/lay/lib/layer/layer.js?v=2.4"></script> -->
+<script type="text/javascript" src="https://cdn.rawgit.com/sentsin/layer/2.x/layer.js"></script>
+<script type="text/javascript" src="../plugins/ValidformUtils.js"></script>
+<form id="ValidformDemo" action="" >
+	<label class="form-label col-xs-1">用户名：</label>
+	<input id="name" name="name" type="text" datatype="*" nullmsg="请输入用户名" errormsg="请输入用户名">
+	
+	<label class="form-label col-xs-1">密码：</label>
+	<input id="password" name="password" type="text" datatype="n" errormsg="请输入密码">
+	
+	<label class="form-label col-xs-1">email：</label>
+	<input id="email" name="email" type="text" datatype="e"  errormsg="请输入email">
+	
+	<label class="form-label col-xs-1">demo：</label>
+	<input id="demo1" name="demo1" type="text" datatype="float"  errormsg="请输入。。。。">
+    <input type="button" value="button" onclick = "save()">
+    <input type="submit" value="submit">
+</form>
+<script>
+//$("#ValidformDemo").Validform(ValidformUtils.settings); 
+ValidformUtils.newSettings = {
+		tipSweep:true	
+}
+
+var save =  function(){
+	var bool = ValidformUtils.checkTips($("#ValidformDemo"));
+	if(!bool){
+		return ;
+	}
+	alert("通过。。。。");
+}
+
+
+</script>
+</body>
+</html>

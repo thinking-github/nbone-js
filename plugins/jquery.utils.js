@@ -5,6 +5,8 @@
  */
 (function($) {
 	
+	var jQuery = $;
+	
 	$.postJSON = function(url,data,callback){
 		
 		return $.post(url,data,callback,"json");
@@ -12,13 +14,71 @@
 	$.postJson = $.postJSON;
 	
 	
-	
-	
 	$.postXML = function(url,data,callback){
 		
 		return $.post(url,data,callback,"xml");
 	}
 	$.postXml = $.postXML;
+	
+	
+	
+	var jsonOptions = {
+			contentType: "application/json",
+            dataType: "json",
+	};
+	/**
+	 * 封装ajax请求的总控制器
+	 * @see jquery.js
+	 * @param url    请求路径
+	 * @param method 不区分大小写
+	 * @param data   请求数据
+	 * @param callback 
+	 * @param options ajax settings
+	 */
+	jQuery.send = function( url,method, data, callback, options) {
+        
+		if(method == null){
+        	 method = "GET";
+        }
+		// Shift arguments if data argument was omitted
+		if ( jQuery.isFunction( data ) ) {
+			options = options || callback;
+			callback = data;
+			data = undefined;
+		}
+		//XXX:thinking
+		if(!options){
+			options = {};
+		}
+
+		// The url can be an options object (which then must have .url)
+		return jQuery.ajax( jQuery.extend({},options,{
+			url: url,
+			type: method,
+			data: data,
+			success: callback
+		}, jQuery.isPlainObject( url ) && url ) );
+	};
+	
+	
+	
+	/**
+	 * delete 是 js 关键字 故使用DELETE
+	 * add http put patch delete method 
+	 * @see jQuery.js
+	 */
+	jQuery.each( [ "put","patch", "DELETE" ], function( i, method ) {
+		jQuery[ method ] = function( url, data, callback, type ) {
+			jQuery.send(url, method, data, callback, type);
+		
+		};
+	} );
+	
+	jQuery.httpDelete = function( url, data, callback, type){
+		jQuery.send(url, "DELETE", data, callback, type);
+	}
+	
+	
 
 })(jQuery);
 

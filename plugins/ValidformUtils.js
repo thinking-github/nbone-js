@@ -19,10 +19,15 @@ var ValidformUtilsClass = function(){
 	var me  = this;
 	
 	me.settings = {
-			tiptype:function(msg){
+			tiptype:function(msg,o,cssctl){
 				//layer.alert(msg);
 				if(msg){
-					layer.msg(msg);
+					// type:1=>正在检测 | 2=>通过
+					//type指示提示的状态，值为1、2、3、4， 1：正在检测/提交数据，2：通过验证，3：验证失败，4：提示ignore状态, 
+					if(o.type != 2){
+						layer.msg(msg);
+					}
+					
 				}
 		
 	        },
@@ -91,8 +96,20 @@ var ValidformUtilsClass = function(){
 				"pfAndNn":"请输入正整数或者小数"
 			}
 		}
+	//$.Tipmsg.w = tipmsg.w;
 	
-	
+	me._init = function(){
+		if(this.newSettings.datatype){
+			$.extend(this.settings.datatype,this.newSettings.datatype);
+			delete this.newSettings.datatype;
+		}  
+		//Validform function
+		var settings = $.extend({},this.settings,this.newSettings);
+		
+		//还原
+		this.newSettings = {};
+		return settings;
+	}
 	//--------------自定义扩展方法-------------
 	
 	/**
@@ -115,14 +132,15 @@ var ValidformUtilsClass = function(){
 	 * @returns Boolean true=验证通过
 	 */
 	me.check = function(jqform,bool,selector){
-		//Validform function
-		var settings = $.extend({},this.settings,this.newSettings);
-		//还原
-		this.newSettings = {};
-		var form = jqform.Validform(settings);
-		var bool = form.check(bool,selector);
+		var settings = this._init();
 		
-		return bool;
+		var form = jqform.Validform(settings);
+		$.extend(form.tipmsg.w,this.tipmsg.w);
+		
+		var checked = form.check(bool,selector);
+		
+		delete form.forms;
+		return checked;
 	}
 	/**
 	 * @param tiptype Validform 规定的数值或者自定义回调函数
